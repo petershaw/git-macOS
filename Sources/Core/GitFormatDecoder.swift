@@ -15,7 +15,7 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 
-import Cocoa
+import Foundation
 
 class GitFormatDecoder {
 
@@ -43,7 +43,9 @@ class GitFormatDecoder {
             }
 
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
+            if #available(macOS 10.12, *) {
+                decoder.dateDecodingStrategy = .iso8601
+            }
             
             guard let object = try? decoder.decode(T.self, from: data) else {
                 continue
