@@ -43,6 +43,20 @@ Before installing this framework, please make sure you're using the correct vers
 git --version
 $ git version 2.15.1
 ```
+### SPM 
+
+Add `git-macOS.git` to the package dependencies:
+```
+dependencies: [
+    .package(name: "Git", url: "https://github.com/petershaw/git-macOS.git", from: "1.9.1")
+],
+```
+
+And add a `Git` dependency to your target: 
+```
+.product(name: "Git", package: "Git")
+```
+
 
 ### Carthage
 
