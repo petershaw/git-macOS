@@ -10,6 +10,6 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(name: "Git", dependencies: [], path: "Sources"),
-        .testTarget(name: "GitTests", dependencies: ["Git-macOS"], path: "Tests")
+        .testTarget(name: "GitTests", dependencies: ["Git"], path: "Tests")
     ]
 )
