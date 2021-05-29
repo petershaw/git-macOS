@@ -3,13 +3,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "Git",
+    name: "GitWrapper",
+    platforms: [SupportedPlatform.macOS("10.15")],
     products: [
-        .library(name: "Git", targets: ["Git"]),
+        .library(name: "GitWrapper", targets: ["GitWrapper"]),
         ],
     dependencies: [],
     targets: [
-        .target(name: "Git", dependencies: [], path: "Sources"),
-        .testTarget(name: "GitTests", dependencies: ["Git"], path: "Tests")
+        .target(name: "GitWrapper", dependencies: [], path: "Sources"),
+        .testTarget(name: "GitTests", dependencies: ["GitWrapper"], path: "Tests")
     ]
 )
